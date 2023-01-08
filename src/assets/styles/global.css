@@ -1,0 +1,40 @@
+:root {
+  --midnight-blue: #121528;
+  --paper-white: #DEDEDE;
+  --salmon-pink: #E87575;
+  --lettuce-green: #77D68C;
+  --electric-blue: #0080FF;
+  --desiderata: #FFB403; /* Why Desiderata? Because I like it */
+
+  --xxs: 8px;
+  --xs: 12px;
+  --s: 1rem;
+  --m: 1.5rem;
+  --l: 2rem;
+  --xl: 2.5rem;
+  --xxl: 4rem;
+  --xxxl: 8rem;
+  --jumbo: 16rem;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Michroma;
+}
+
+.page {
+  display: flex;
+
+  flex-grow: 1;
+  height: 90vh;
+  color: var(--paper-white);
+  background-color: var(--midnight-blue);
+
+  padding-left: var(--s);
+  padding-right: var(--s);
+}
+
+
+/*================================ Font Sizes ================================ */

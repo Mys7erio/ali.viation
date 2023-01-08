@@ -1,0 +1,55 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+
+    position: sticky;
+    top: 0;
+    background-color: var(--midnight-blue);
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+
+.nav-logo {
+    margin-right: auto;
+    margin-top: var(--m);
+}
+
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%; /* This makes the div take all available space */
+    width: calc(1.5 * var(--xxxl)); /* Take up 1.5 times the width of xxl */
+
+    /* background-color: var(--desiderata); */
+    border-bottom-left-radius: var(--l);
+    border-bottom-right-radius: var(--l);
+    margin-left: var(--m);
+    margin-right: var(--m);
+
+    cursor: pointer; /* This makes anything look clickable, haha */
+}
+.nav-item:hover {
+    background-color: var(--desiderata);
+    color: black;
+}
+.nav-item:hover > .nav-link {
+    color:black;
+}
+
+
+.nav-link {
+    color: var(--paper-white);
+    font-size: var(--m);
+    text-decoration: none;
+    padding-right: var(--xs);
+    padding-left: var(--xs);
+}
