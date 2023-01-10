@@ -4,11 +4,11 @@ import {BrowserRouter} from 'react-router-dom';
 
 import './assets/styles/global.css'
 
-import Home from './Home'
-import Navbar from './Navbar'
-import Skills from './Skills'
-import Blogs from './Blogs'
-import Contact from './Contact'
+import Home from './pages/Home'
+import Navbar from './pages/Navbar'
+import Skills from './pages/Skills'
+import Blogs from './pages/Blogs'
+import Contact from './pages/Contact'
 import { Route, Routes } from 'react-router-dom';
 
 

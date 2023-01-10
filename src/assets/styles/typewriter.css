@@ -1,6 +1,13 @@
-.typewriter-text, .typewriter-cursor {
-    font-size: 64px;
-    font-family: Comfortaa;
+.greetings-typewriter-text {
+    /* font-size: var(--xxxl); */
+    font-family: Pacifico;
+    font-size: clamp(1rem, var(--xxxl), 8rem);
+    padding-top: var(--l);
+    padding-bottom: var(--l);
 }
 
-
+.greetings-typewriter-cursor {
+    font-size: clamp(1rem, var(--xxxl), 8rem);  
+    font-weight: 100;
+    font-family: Comfortaa;
+}

@@ -3,6 +3,7 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    flex-shrink: 1;
     height: 10vh;
 
     position: sticky;
@@ -20,36 +21,28 @@ nav {
 }
 
 
-.nav-item {
+.nav-link {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: 100%; /* This makes the div take all available space */
-    width: calc(1.5 * var(--xxxl)); /* Take up 1.5 times the width of xxl */
-
-    /* background-color: var(--desiderata); */
-    border-bottom-left-radius: var(--l);
-    border-bottom-right-radius: var(--l);
-    margin-left: var(--m);
-    margin-right: var(--m);
-
-    cursor: pointer; /* This makes anything look clickable, haha */
-}
-.nav-item:hover {
-    background-color: var(--desiderata);
-    color: black;
-}
-.nav-item:hover > .nav-link {
-    color:black;
-}
-
-
-.nav-link {
+    /* color: black;
+    background-color: var(--desiderata); */
     color: var(--paper-white);
-    font-size: var(--m);
+    font-size: clamp(12px, 1vw, 2vw);
     text-decoration: none;
-    padding-right: var(--xs);
-    padding-left: var(--xs);
+
+    height: 100%;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+
+.nav-link:hover, .active {
+    color: black;
+    background-color: var(--desiderata);
 }
