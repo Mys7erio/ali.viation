@@ -10,7 +10,7 @@ export default function Navbar({ref}) {
         <nav>
             {/* Using Link here cuz NavLink adds an active class to the active element */}
             <Link to="/" className='nav-logo'>
-                <NavLogo height="96" width="96"/>
+                <NavLogo />
             </Link>
 
             <NavItem name="Home" url="/home/" active={true}/>
@@ -22,21 +22,6 @@ export default function Navbar({ref}) {
 }
 
 
-// function NavItem({name, url, ref}) {
-//     const navigateTo = useNavigate()
-//     const tabClickHandler = () => navigateTo(url)
-//     console.log(ref)
-
-//     return(
-//         <div className="nav-item" onClick={tabClickHandler}>
-//             <NavLink className="nav-link" to={url}>
-//                 {name}
-//             </NavLink>
-//         </div>
-//     )
-// }
-
-
 function NavItem({name, url, active=false}) {
     return(
         <NavLink to={url} className="nav-link">
@@ -46,13 +31,8 @@ function NavItem({name, url, active=false}) {
 }
 
 
-function NavLogo({height=512, width=512}) {
+function NavLogo() {
     return(
-        <img
-            src={logo}
-            height={height}
-            width={width}
-            alt="website logo"
-        />
+        <img src={logo} alt="website logo" />
     )
 }

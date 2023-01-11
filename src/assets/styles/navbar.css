@@ -16,8 +16,13 @@ nav {
 
 
 .nav-logo {
+    display: flex;
     margin-right: auto;
     margin-top: var(--m);
+}
+.nav-logo > img {
+    height: 8vh;
+    width: 8vh;
 }
 
 
