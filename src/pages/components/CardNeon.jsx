@@ -1,6 +1,5 @@
 
 
-
 // Will experiment with more colors in the future, haha :)
 export const CardColors = {
     NeonBlue: '#0080FF',
@@ -10,7 +9,6 @@ export const CardColors = {
 
 
 export default function CardNeon({heading, cardColor, badges}) {
-    // Make NeonBlue default color
 
     const cardStyle = {
         display: 'flex',

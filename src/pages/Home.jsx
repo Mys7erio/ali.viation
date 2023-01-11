@@ -32,7 +32,8 @@ export default function Home() {
 
             <h1 align='center'>
                 Hi there, I'm &nbsp;
-                <span style={{color: "var(--desiderata)"}}>Shakir</span>
+                {/* <span style={{color: "var(--desiderata)"}}>Shakir</span> */}
+                <span className="text-highlight">Shakir</span>
             </h1>
 
             <h1 style={{width: '60vw'}} align='center'>

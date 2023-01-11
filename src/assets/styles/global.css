@@ -38,4 +38,7 @@ body {
 }
 
 
+.text-highlight {
+  color: var(--desiderata);
+}
 /*================================ Font Sizes ================================ */
