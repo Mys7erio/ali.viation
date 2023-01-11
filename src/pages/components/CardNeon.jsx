@@ -1,3 +1,4 @@
+import '../../assets/styles/card-neon.css'
 
 
 // Will experiment with more colors in the future, haha :)
@@ -10,43 +11,13 @@ export const CardColors = {
 
 export default function CardNeon({heading, cardColor, badges}) {
 
-    const cardStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-
-        height: '512px',
-        width: '378px', 
-
-        borderStyle: 'solid',
-        borderColor: cardColor,
-        borderRadius: '12px',
-
-        borderTopWidth: '1px',
-        borderRightWidth: '3px',
-        borderBottomWidth: '2px ',
-        borderLeftWidth: '0px',
-
-        margin: '2rem',
-        padding: '1rem',
-    }
-    const headingStyle = {
-        color: cardColor,
-        marginBottom: 'auto',
-    }
-
-    const skillsStyle = {
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginBottom: 'auto'
-    }
-
     return(
-        <div style={cardStyle}>
-            <h1 style={headingStyle} align='center'>
+        <div className="card-neon" style={{borderColor: cardColor}}>
+            <h1 className='card-heading' style={{color: cardColor}} align='center'>
                 {heading}
             </h1>
 
-            <div style={skillsStyle}>
+            <div className='skills'>
                 {...badges}
             </div>
         </div>

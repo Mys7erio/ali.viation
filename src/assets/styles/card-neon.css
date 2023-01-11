@@ -1,0 +1,44 @@
+.card-neon {
+    display: flex;
+    flex-direction: column;
+    height: 512px;
+    width: 20vw;
+    min-width: 256px;
+
+    border-style: solid;
+    /* BorderColor is now being set in the Card component itself */
+    /* border-color: cardColor; */
+    border-radius: 12px;
+    border-top-width: 1px;
+    border-right-width: 3px;
+    border-bottom-width: 2px ;
+    border-left-width: 0px;
+
+    margin: 2rem;
+    padding: 1rem;
+
+    transition: .5s;
+}
+.card-neon:hover {
+    margin: 8rem;
+    transform: scale(1.1);
+}
+
+
+.card-heading {
+    /* color is being set in the component*/
+    margin-bottom: auto;
+    transition: 200ms;
+}
+.card-heading:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+}
+
