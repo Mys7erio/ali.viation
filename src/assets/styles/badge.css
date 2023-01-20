@@ -6,6 +6,7 @@
     padding: 4px 1rem 4px 1rem;
     /* border color will be set in the component */
     /* border-color: color; */
+    background-color: var(--midnight-blue);
     border-style: solid;
     border-radius: 4px;
     border-top-width: 1px;
