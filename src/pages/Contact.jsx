@@ -35,11 +35,11 @@ export default function Contact() {
 
     return(
         <div className="page" style={pageStyle}>
-            <h1 align="center">Wanna stay in the loop?</h1>
-            <h1 className="text-highlight">Let's Connect</h1>
+            <h1 align="center" style={{fontSize: 'clamp(0.8rem, 8vw, 3rem)',}}>Wanna stay in the loop?</h1>
+            <h1 className="text-highlight" style={{fontSize: 'clamp(0.8rem, 8vw, 3rem)',}}>Let's Connect</h1>
 
             <div style={socialsSectionStyle}>
-                <p>Got some queries? Feel free to reach out at: </p>
+                <p align='center'>Got some queries? Feel free to reach out at: </p>
                 <div style={{display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
                     <p>Email: &nbsp;
                         <a className="text-highlight" style={{textDecoration: 'none'}} href="mailto:me@aliviation.online">

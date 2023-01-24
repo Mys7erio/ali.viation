@@ -1,9 +1,10 @@
 .card-neon {
     display: flex;
     flex-direction: column;
-    height: 512px;
     width: 20vw;
+    height: 512px;
     min-width: 256px;
+    min-height: 40vh;
 
     border-style: solid;
     /* BorderColor is now being set in the Card component itself */
@@ -27,6 +28,7 @@
 
 .card-heading {
     /* color is being set in the component*/
+    font-size: clamp(1.5rem, 2vw, 4rem);
     margin-bottom: auto;
     transition: 200ms;
 }

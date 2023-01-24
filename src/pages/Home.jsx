@@ -16,7 +16,7 @@ export default function Home() {
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'Comfortaa',
-        fontSize: 'var(--m)'
+        // fontSize: 'clamp(0.8rem, 1vw, 6rem)'
     }
 
     return(
@@ -30,13 +30,12 @@ export default function Home() {
                 />
             </div>
 
-            <h1 align='center'>
-                Hi there, I'm &nbsp;
-                {/* <span style={{color: "var(--desiderata)"}}>Shakir</span> */}
+            <h1 align='center' style={{fontSize: 'clamp(0.8rem, 8vw, 4rem)'}}>
+                I'm &nbsp;
                 <span className="text-highlight">Shakir</span>
             </h1>
 
-            <h1 style={{width: '60vw'}} align='center'>
+            <h1 align='center' style={{fontSize: 'clamp(0.8rem, 8vw, 3rem)'}}>
                 Welcome to my portfolio: A reflection of my work and experieces
             </h1>
         </div>

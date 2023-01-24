@@ -51,7 +51,7 @@ export default function Skills() {
     }
     const headingStyle = {
         fontFamily: 'comfortaa',
-        fontSize: 'clamp(1rem, var(--xl), 4rem)'
+        fontSize: 'clamp(0.8rem, 8vw, 3rem)',
     }
 
     return(
