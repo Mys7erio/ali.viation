@@ -1,1 +1,1 @@
-<h1 align='center'>Repository for my personal website</h1>
+<h1 align='center'>Repository For My Personal Website</h1>
