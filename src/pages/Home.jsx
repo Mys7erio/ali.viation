@@ -1,4 +1,4 @@
-import TypeWriter from "./Components/TypeWriter"
+import TypeWriter from "./components/TypeWriter"
 
 
 export default function Home() {
