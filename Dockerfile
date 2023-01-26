@@ -19,4 +19,10 @@ WORKDIR /app
 # Copy build and remove source code
 RUN cp -r /tmp/ali.viation/dist/* . && rm -r /tmp/*
 
-CMD ["serve", "-l", "$PORT"]
+# Access the build-time variable PORT and create a runtime variable with the same name & value
+ARG PORT=8080
+ENV PORT=$PORT
+
+# Expose port and start service
+EXPORT $PORT
+CMD ["serve", "-l", $PORT]
