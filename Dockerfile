@@ -3,8 +3,9 @@ FROM node:19-bullseye-slim as build
 # Install git
 RUN apt-get update && apt-get install git -y
 
-# Clone Repository
+# Clone Repository & change working dir
 RUN git clone https://github.com/Mys7erio/ali.viation
+WORKDIR /ali.viation
 
 # Install dependencies
 RUN npm install
