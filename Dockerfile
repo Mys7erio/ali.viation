@@ -24,5 +24,5 @@ ARG PORT=8080
 ENV PORT=$PORT
 
 # Expose port and start service
-EXPORT $PORT
+EXPOSE $PORT
 CMD ["serve", "-l", $PORT]
