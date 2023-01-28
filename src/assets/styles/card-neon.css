@@ -1,8 +1,8 @@
 .card-neon {
     display: flex;
     flex-direction: column;
-    width: 20vw;
-    height: 512px;
+    width: 16vw;
+    height: 50vh;
     min-width: 256px;
     min-height: 40vh;
 
@@ -16,19 +16,19 @@
     border-left-width: 0px;
 
     margin: 2rem;
-    padding: 1rem;
+    padding: 2rem;
 
     transition: .5s;
 }
 .card-neon:hover {
-    margin: 8rem;
-    transform: scale(1.1);
+    margin: 4rem;
+    transform: scale(1.2);
 }
 
 
 .card-heading {
     /* color is being set in the component*/
-    font-size: clamp(1.5rem, 2vw, 4rem);
+    font-size: clamp(1rem, 4vh, 2rem);
     margin-bottom: auto;
     transition: 200ms;
 }
