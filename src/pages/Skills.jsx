@@ -41,13 +41,13 @@ export default function Skills() {
 
     const pageStyle = {
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'center'
     }
     const cardsSectionStyle = {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
     }
     const headingStyle = {
         fontFamily: 'comfortaa',
@@ -67,8 +67,8 @@ export default function Skills() {
                 <CardNeon heading="UI / UX Designer" badges={designSkills} cardColor={SalmonPink}/>
                 <CardNeon heading="Front-End Development" badges={frontendSkills} cardColor={NeonBlue}/>
                 <CardNeon heading="Back-End Development" badges={backendSkills} cardColor={LettuceGreen}/>
-                {/* <CardNeon heading="UI / UX Designer" badges={badges} cardColor={CardColors.NeonBlue}/>
-                <CardNeon heading="Back-End Development" badges={badges} cardColor={CardColors.LettuceGreen}/> */}
+                {/* <CardNeon heading="UI / UX Designer" badges={designSkills} cardColor={CardColors.NeonBlue}/> */}
+                {/* <CardNeon heading="Back-End Development" badges={frontendSkills} cardColor={CardColors.LettuceGreen}/> */}
             </div>
 
         </div>

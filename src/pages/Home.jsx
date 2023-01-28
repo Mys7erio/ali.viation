@@ -15,8 +15,9 @@ export default function Home() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        wordSpacing: '8px',
         fontFamily: 'Comfortaa',
-        // fontSize: 'clamp(0.8rem, 1vw, 6rem)'
+        padding: '0px 12vw 0px 12vw',
     }
 
     return(
@@ -36,7 +37,11 @@ export default function Home() {
             </h1>
 
             <h1 align='center' style={{fontSize: 'clamp(0.8rem, 8vw, 3rem)'}}>
-                Welcome to my portfolio: A reflection of my work and experieces
+                I'm <span className="text-highlight">Passionate</span> About Technology, Programming And CyberSecurity
+            </h1>
+
+            <h1 align='center' style={{fontSize: 'clamp(0.8rem, 6vw, 2rem)'}}>
+                I'm an <span className="text-highlight">avid learner</span> and I like to boast about my learning capabilities, aptitude & my awesome music taste
             </h1>
         </div>
     )
