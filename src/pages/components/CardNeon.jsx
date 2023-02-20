@@ -1,14 +1,6 @@
 import '../../assets/styles/card-neon.css'
 
 
-// Will experiment with more colors in the future, haha :)
-export const CardColors = {
-    NeonBlue: '#0080FF',
-    SalmonPink: '#E87575',
-    LettuceGreen: '#77D68C',
-}
-
-
 export default function CardNeon({heading, cardColor, badges}) {
 
     return(
