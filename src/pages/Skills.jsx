@@ -4,7 +4,10 @@ import { CardColors } from "./components/util"
 import {
     designSkills,
     frontendSkills,
-    backendSkills
+    backendSkills,
+    cyberSecSkills,
+    utilitySkills,
+    generalProgramming,
 } from "./components/util"
 
 // Destructure array into global variables
@@ -14,13 +17,16 @@ const {NeonBlue, SalmonPink, LettuceGreen} = CardColors
 // Component styles
 const pageStyle = {
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 }
 const cardsSectionStyle = {
     display: 'flex',
+    width: '80vw',
     flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
+    gap: '64px'
 }
 const headingStyle = {
     fontFamily: 'comfortaa',
@@ -34,6 +40,9 @@ export default function Skills() {
     const design = designSkills.map((skill) => <Badge text={skill} color={SalmonPink} />)
     const frontend = frontendSkills.map((skill) => <Badge text={skill} color={NeonBlue} />)
     const backend = backendSkills.map((skill) => <Badge text={skill} color={LettuceGreen} />)
+    const cybersec = cyberSecSkills.map((skill) => <Badge text={skill} color={NeonBlue}/>)
+    const utilities = utilitySkills.map((skill) => <Badge text={skill} color={SalmonPink} />)
+    const programming = generalProgramming.map((skill) => <Badge text={skill} color={NeonBlue}/>)
 
     return(
         <div className="page" style={pageStyle}>
@@ -45,11 +54,12 @@ export default function Skills() {
             </h1>
 
             <div style={cardsSectionStyle}>
-                <CardNeon heading="UI / UX Designer" badges={design} cardColor={SalmonPink}/>
-                <CardNeon heading="Front-End Development" badges={frontend} cardColor={NeonBlue}/>
-                <CardNeon heading="Back-End Development" badges={backend} cardColor={LettuceGreen}/>
-                {/* <CardNeon heading="UI / UX Designer" badges={designSkills} cardColor={CardColors.NeonBlue}/> */}
-                {/* <CardNeon heading="Back-End Development" badges={frontendSkills} cardColor={CardColors.LettuceGreen}/> */}
+                <CardNeon heading="UI / UX" badges={design} cardColor={SalmonPink}/>
+                <CardNeon heading="Front-End" badges={frontend} cardColor={NeonBlue}/>
+                <CardNeon heading="Back-End" badges={backend} cardColor={LettuceGreen}/>
+                <CardNeon heading="Cyber Security" badges={cybersec} cardColor={NeonBlue}/>
+                <CardNeon heading="Utilities" badges={utilities} cardColor={SalmonPink}/>
+                <CardNeon heading="Programming Languages" badges={programming} cardColor={NeonBlue}/>
             </div>
 
         </div>

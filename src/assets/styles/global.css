@@ -41,4 +41,25 @@ body {
 .text-highlight {
   color: var(--desiderata);
 }
-/*================================ Font Sizes ================================ */
+
+
+
+/* ================================ Styles ================================ */
+
+.home-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-spacing: 8px;
+  font-family: Comfortaa;
+  padding: 0px 10vw;
+}
+
+
+
+@media only screen and (max-width: 768px){
+  .home-style {
+    padding: 8px;
+  }
+}
