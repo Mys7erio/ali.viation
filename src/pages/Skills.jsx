@@ -1,58 +1,39 @@
 import CardNeon from "./components/CardNeon"
 import Badge from "./components/Badge"
-import { CardColors } from "./components/CardNeon"
-
+import { CardColors } from "./components/util"
+import {
+    designSkills,
+    frontendSkills,
+    backendSkills
+} from "./components/util"
 
 // Destructure array into global variables
 const {NeonBlue, SalmonPink, LettuceGreen} = CardColors
 
 
+// Component styles
+const pageStyle = {
+    flexDirection: 'column',
+    justifyContent: 'center'
+}
+const cardsSectionStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+}
+const headingStyle = {
+    fontFamily: 'comfortaa',
+    fontSize: 'clamp(0.8rem, 8vw, 3rem)',
+}
+
+
+
 export default function Skills() {
 
-    const designSkills = [
-        'Figma',
-        'Wireframing',
-        'Prototyping',
-        'Logo Designing',
-    ].map((skill) => 
-        <Badge text={skill} color={SalmonPink} />
-    )
-
-    const frontendSkills = [
-        'HTML',
-        'CSS',
-        'Javascript',
-        'React.js',
-        'Svelte.js',
-        'Bootstrap'
-    ].map(
-        (skill) => <Badge text={skill} color={NeonBlue} />
-    )
-
-    const backendSkills = [
-        'Python',
-        'FastAPI',
-        'Starlette',
-        'Django',
-        'REST API Developent',
-    ].map(
-        (skill) => <Badge text={skill} color={LettuceGreen} />
-    )
-
-    const pageStyle = {
-        flexDirection: 'column',
-        justifyContent: 'center'
-    }
-    const cardsSectionStyle = {
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-    }
-    const headingStyle = {
-        fontFamily: 'comfortaa',
-        fontSize: 'clamp(0.8rem, 8vw, 3rem)',
-    }
+    const design = designSkills.map((skill) => <Badge text={skill} color={SalmonPink} />)
+    const frontend = frontendSkills.map((skill) => <Badge text={skill} color={NeonBlue} />)
+    const backend = backendSkills.map((skill) => <Badge text={skill} color={LettuceGreen} />)
 
     return(
         <div className="page" style={pageStyle}>
@@ -64,9 +45,9 @@ export default function Skills() {
             </h1>
 
             <div style={cardsSectionStyle}>
-                <CardNeon heading="UI / UX Designer" badges={designSkills} cardColor={SalmonPink}/>
-                <CardNeon heading="Front-End Development" badges={frontendSkills} cardColor={NeonBlue}/>
-                <CardNeon heading="Back-End Development" badges={backendSkills} cardColor={LettuceGreen}/>
+                <CardNeon heading="UI / UX Designer" badges={design} cardColor={SalmonPink}/>
+                <CardNeon heading="Front-End Development" badges={frontend} cardColor={NeonBlue}/>
+                <CardNeon heading="Back-End Development" badges={backend} cardColor={LettuceGreen}/>
                 {/* <CardNeon heading="UI / UX Designer" badges={designSkills} cardColor={CardColors.NeonBlue}/> */}
                 {/* <CardNeon heading="Back-End Development" badges={frontendSkills} cardColor={CardColors.LettuceGreen}/> */}
             </div>

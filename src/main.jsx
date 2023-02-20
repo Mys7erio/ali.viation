@@ -20,8 +20,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/' element={<Home />} />
         <Route path='/home/' element={<Home />} />
         <Route path='/skills/' element={<Skills />} />
-        <Route path='/blogs/' element={<Blogs />} />
         <Route path='/contact/' element={<Contact />} />
+        <Route path='/blogs/'>
+          <Route index element={<Blogs />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

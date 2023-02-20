@@ -1,15 +1,19 @@
+
+const pageStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'Comfortaa',
+}  
+
+
 export default function Blogs() {
-    const pageStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: 'Comfortaa'
-    }
     return(
         <div className="page" style={pageStyle}>
-            <h1>Hang on tight, I'm still working on the blogs</h1>
-            <h1 style={{fontSize: '10vh'}}>;)</h1>
+            {/* <h1>Visit <a className="text-highlight" href="https://blogs.aliviation.online">https://blogs.aliviation.online</a> to see my blogs</h1> */}
+            <h1>Just a 'lil bit more of waiting</h1>
+            <h1>The blogs website will be live soon</h1>
         </div>
     )
 }
