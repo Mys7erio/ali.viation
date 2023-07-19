@@ -2,9 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 16vw;
-    /* height: 40vh; */
     min-width: 256px;
-    min-height: 378px;
+    min-height: 28rem;
 
     border-style: solid;
     /* BorderColor is now being set in the Card component itself */
@@ -22,7 +21,7 @@
 }
 .card-neon:hover {
     margin: 2rem;
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 
