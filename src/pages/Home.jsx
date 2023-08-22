@@ -6,7 +6,6 @@ export default function Home() {
         'Hello',
         'Bonjour',
         'Hola',
-        'Ciao',
         'नमस्ते',
     ]
 
