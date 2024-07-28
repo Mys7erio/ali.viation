@@ -1,10 +1,10 @@
 :root {
   --midnight-blue: #121528;
-  --paper-white: #DEDEDE;
-  --salmon-pink: #E87575;
-  --lettuce-green: #77D68C;
-  --electric-blue: #0080FF;
-  --desiderata: #FFB403; /* Why Desiderata? Because I like it */
+  --paper-white: #dedede;
+  --salmon-pink: #e87575;
+  --lettuce-green: #77d68c;
+  --electric-blue: #0080ff;
+  --desiderata: #ffb403; /* Why Desiderata? Because I like it */
 
   --xxs: 8px;
   --xs: 12px;
@@ -37,12 +37,9 @@ body {
   padding-right: var(--s);
 }
 
-
 .text-highlight {
   color: var(--desiderata);
 }
-
-
 
 /* ================================ Styles ================================ */
 
@@ -53,12 +50,10 @@ body {
   align-items: center;
   word-spacing: 8px;
   font-family: Comfortaa;
-  padding: 0px 10vw;
+  padding: 0px 15vw;
 }
 
-
-
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   .home-style {
     padding: 8px;
   }
