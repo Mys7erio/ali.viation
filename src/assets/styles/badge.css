@@ -1,23 +1,24 @@
 .badge {
-    font-size: clamp(0.8rem, 1vw, 2rem);
-    font-family: Comfortaa;
+  font-size: clamp(0.8rem, 1vw, 2rem);
+  font-family: Comfortaa;
 
-    margin: 0.5rem;
-    padding: 4px 1rem 4px 1rem;
-    /* border color will be set in the component */
-    /* border-color: color; */
-    background-color: var(--midnight-blue);
-    border-style: solid;
-    border-radius: 4px;
-    border-top-width: 1px;
-    border-right-width: 3px;
-    border-bottom-width: 0.5px;
-    border-left-width: 0.5px;
+  margin: 0.5rem;
+  padding: 4px 1rem 4px 1rem;
+  /* border color will be set in the component */
+  /* border-color: color; */
+  background-color: var(--midnight-blue);
+  border-style: solid;
+  border-radius: 4px;
+  border-top-width: 1px;
+  border-right-width: 3px;
+  border-bottom-width: 0.5px;
+  border-left-width: 0.5px;
 
-    transition: 200ms;
+  transition: 200ms;
 }
 
 .badge:hover {
-    transform: scale(1.25);
-    font-weight: bold;
+  transform: scale(1.25);
+  font-weight: bold;
+  cursor: pointer;
 }
