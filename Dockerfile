@@ -1,20 +1,23 @@
-FROM node:19-bullseye-slim as build
+FROM node:lts-slim AS build
 
-# Install git
-RUN apt-get update && apt-get install git -y
+WORKDIR /webroot
 
-# Clone Repository & change working dir
-RUN git clone https://github.com/Mys7erio/ali.viation
-WORKDIR /ali.viation
-
-# Install dependencies
+COPY ./package.json /webroot/package.json
+# COPY ./package-lock.json /webroot/package-lock.json
 RUN npm install
 
-# Build production version
+COPY ./src /webroot/src
+COPY ./index.html /webroot/index.html
+COPY ./public /webroot/public
+COPY ./vite.config.js /webroot/vite.config.js
+
 RUN npm run build
 
 
-# Transfer build to nginx root folder
-FROM nginx:latest
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /ali.viation/dist/ /usr/share/nginx/html
+FROM nginx:alpine AS final
+
+COPY --from=build /webroot/dist /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
