@@ -4,14 +4,18 @@ WORKDIR /webroot
 
 COPY ./package.json /webroot/package.json
 # COPY ./package-lock.json /webroot/package-lock.json
-RUN npm install
+
+# Install pnpm via corepack, and then install node dependencies
+RUN corepack enable && \
+    corepack install -g pnpm && \
+    pnpm install
 
 COPY ./src /webroot/src
 COPY ./index.html /webroot/index.html
 COPY ./public /webroot/public
 COPY ./vite.config.js /webroot/vite.config.js
 
-RUN npm run build
+RUN pnpm run build
 
 
 FROM nginx:alpine AS final
