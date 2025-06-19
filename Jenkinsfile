@@ -19,29 +19,37 @@ pipeline {
         
         stage('Clone repo') {
             steps {
-                sh 'rm -rf ali.viation/'
-                sh 'git clone https://github.com/Mys7erio/ali.viation'
+                sh 'rm -rf ali.viation/ ./*'
+                sh 'git clone https://github.com/Mys7erio/ali.viation .'
             }
         }
         stage('Install Dependencies') {
             steps {
                 // Use full path to the pnpm binary since we're using NVM for installing and managing node,
                 // and it doesn't put pnpm to path
-                sh 'cd ali.viation && pnpm install'
+                sh 'pnpm install'
             }
         }
         
         stage('Build') {
             steps {
-                sh 'cd ali.viation && pnpm run build'
+                sh 'pnpm run build'
             }
         }
 
         stage('Archive') {
             steps {
                 // Create tar for source code
-                sh 'tar czvf source.tar.gz ali.viation/dist'
+                sh 'tar czvf source.tar.gz dist'
                 archiveArtifacts artifacts: 'source.tar.gz', allowEmptyArchive: false
+            }
+        }
+
+        stage('Create Docker Image - Multi Arch') {
+            steps {
+                // Create tar for source code
+                sh 'docker buildx bake'
+                sh 'docker image ls'
             }
         }
         
