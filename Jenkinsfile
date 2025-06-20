@@ -4,6 +4,7 @@ pipeline {
     }
     
     environment {
+        ENV = ''
         PATH = "/home/ubuntu/.nvm/versions/node/v22.16.0/bin:${env.PATH}"
     }
     
@@ -19,10 +20,14 @@ pipeline {
         
         stage('Clone repo') {
             steps {
-                sh 'rm -rf ali.viation/ ./*'
-                sh 'git clone https://github.com/Mys7erio/ali.viation .'
+                checkout scmGit(
+                    branches: [[name: '*/main']],
+                    extensions: [perBuildTag()],
+                    userRemoteConfigs: [[url: 'https://github.com/Mys7erio/ali.viation']]
+                )
             }
         }
+        
         stage('Install Dependencies') {
             steps {
                 // Use full path to the pnpm binary since we're using NVM for installing and managing node,
@@ -47,9 +52,29 @@ pipeline {
 
         stage('Create Docker Image - Multi Arch') {
             steps {
-                // Create tar for source code
-                sh 'docker buildx bake'
-                sh 'docker image ls'
+                script {
+                    def commithash = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                    env.TAG = commithash
+                }
+                sh "echo 'Tagging latest image with tag: ${env.TAG}'"
+                
+                withCredentials(
+                    [usernamePassword(
+                        credentialsId: 'dockerhub-creds-271122',
+                        passwordVariable: 'PASS',
+                        usernameVariable: 'USER')]
+                ) {
+                    // Dockerhub login
+                    echo "Logging in to Dockerhub using credentials for $USER"
+                    sh "echo $PASS | docker login -u $USER --password-stdin"
+                    
+                    sh "docker buildx bake ci-pipeline --push"
+                    sh 'docker image ls'
+                    
+                    // Logout from Dockerhub
+                    sh "docker logout"
+                    echo "Dockerhub logout successful"
+                }
             }
         }
         
