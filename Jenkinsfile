@@ -77,6 +77,17 @@ pipeline {
                 }
             }
         }
+
+        // This step triggers another Jenkins pipeline named ali.viation-manifests 
+        // which is in-charge of updating the manifests and pushing to github.
+        stage('Update manifests') {
+            steps {
+                build wait: false,
+                propagate: false,
+                job: 'ali.viation-manifests',
+                parameters: [string(name: 'TAG', value: env.TAG)]
+            }
+        }
         
-    }
-}
+    } // stages
+} // pipeline
