@@ -53,7 +53,7 @@ export default function Contact() {
                     </p>
                 </div>
                 <div style={socialLinksSection}>
-                    <IconLink icon={iconLinkedin} link="https://www.linkedin.com/in/shakirali2002" alt="LinkedIn Profile Link" />
+                    <IconLink icon={iconLinkedin} link="https://www.linkedin.com/in/shakirali02" alt="LinkedIn Profile Link" />
                     <IconLink icon={iconInstagram} link="https://instagram.com/ali.viation" alt="Instagram Profile Link" />
                     <IconLink icon={iconGithub} link="https://github.com/Mys7erio" alt="Github Profile Link" />
                     <IconLink icon={iconStackoverflow} link="https://stackoverflow.com/users/15144596/shakir" alt="StackOverflow Profile Link" />
