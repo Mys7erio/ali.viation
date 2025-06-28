@@ -28,20 +28,15 @@ pipeline {
             }
         }
         
-        stage('Install Dependencies') {
+        stage('Install Dependencies and Build Project') {
             steps {
-                // Use full path to the pnpm binary since we're using NVM for installing and managing node,
-                // and it doesn't put pnpm to path
-                sh 'pnpm install'
+                withCredentials([string(credentialsId: 'VITE_GRAFANA_FARO_API_KEY', variable: 'API_KEY')]) {
+                    sh 'pnpm install'
+                    sh 'VITE_GRAFANA_FARO_API_KEY=$API_KEY pnpm run build'
+                }
             }
         }
         
-        stage('Build') {
-            steps {
-                sh 'pnpm run build'
-            }
-        }
-
         stage('Archive') {
             steps {
                 // Create tar for source code

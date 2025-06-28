@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@grafana/faro-react": "^1.18.2",
+    "@grafana/faro-web-tracing": "^1.18.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
@@ -16,6 +18,7 @@
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
+    "@grafana/faro-rollup-plugin": "^0.5.1",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.4",
     "@vitejs/plugin-react": "^4.4.1",
