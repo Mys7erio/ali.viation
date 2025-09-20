@@ -8,6 +8,9 @@ import {
     cyberSecSkills,
     utilitySkills,
     generalProgramming,
+    devOpsSkills,
+    cicdSkills,
+    observabilitySkills
 } from "./components/util"
 
 // Destructure array into global variables
@@ -43,6 +46,9 @@ export default function Skills() {
     const cybersec = cyberSecSkills.map((skill) => <Badge text={skill} color={NeonBlue}/>)
     const utilities = utilitySkills.map((skill) => <Badge text={skill} color={SalmonPink} />)
     const programming = generalProgramming.map((skill) => <Badge text={skill} color={NeonBlue}/>)
+    const devops = devOpsSkills.map((skill) => <Badge text={skill} color={LettuceGreen}/>)
+    const cicd = cicdSkills.map((skill) => <Badge text={skill} color={SalmonPink}/>)
+    const observability = observabilitySkills.map((skill) => <Badge text={skill} color={NeonBlue}/>)
 
     return(
         <div className="page" style={pageStyle}>
@@ -54,12 +60,16 @@ export default function Skills() {
             </h1>
 
             <div style={cardsSectionStyle}>
+                <CardNeon heading="DevOps" badges={devops} cardColor={LettuceGreen}/>
+                <CardNeon heading="CI/CD" badges={cicd} cardColor={SalmonPink}/>
+                <CardNeon heading="Observability" badges={observability} cardColor={NeonBlue}/>
                 <CardNeon heading="UI / UX" badges={design} cardColor={SalmonPink}/>
                 <CardNeon heading="Front-End" badges={frontend} cardColor={NeonBlue}/>
                 <CardNeon heading="Back-End" badges={backend} cardColor={LettuceGreen}/>
                 <CardNeon heading="Cyber Security" badges={cybersec} cardColor={NeonBlue}/>
                 <CardNeon heading="Utilities" badges={utilities} cardColor={SalmonPink}/>
                 <CardNeon heading="Programming Languages" badges={programming} cardColor={NeonBlue}/>
+
             </div>
 
         </div>
