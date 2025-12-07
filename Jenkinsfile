@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'default'
+        label 'aws'
     }
     
     environment {
