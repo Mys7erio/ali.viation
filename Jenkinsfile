@@ -1,14 +1,24 @@
 pipeline {
     agent {
-        label 'cloud'
+        label 'aws'
     }
     
     environment {
         ENV = ''
-        PATH = "/home/ubuntu/.nvm/versions/node/v22.16.0/bin:${env.PATH}"
     }
     
     stages {
+        stage('Setup node environment') {
+            // Removed hardcoded PATH at the top since the node js version was hardcoded, making the pipeline fail if node version changed.
+            // This block now dynamically sets the PATH to include the Node.js version installed via nvm
+            steps {
+                script {
+                    def nodeVersion = sh(script: "ls $HOME/.nvm/versions/node | head -n 1", returnStdout: true).trim()                    
+                    env.PATH = "$HOME/.nvm/versions/node/${nodeVersion}/bin:${env.PATH}"
+                }
+            }
+        }
+
         stage('Get Environment Info') {
             steps {
                 sh 'echo $PATH'
