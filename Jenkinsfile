@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'aws'
+        label 'cloud'
     }
     
     environment {
@@ -9,14 +9,14 @@ pipeline {
     }
     
     stages {
-        // stage('Get Environment Info') {
-        //     steps {
-        //         sh 'echo $PATH'
-        //         sh 'which node || echo "node not found"'
-        //         sh 'which npm || echo "npm not found"'
-        //         sh 'which pnpm || echo "pnpm not found"'
-        //     }
-        // }
+        stage('Get Environment Info') {
+            steps {
+                sh 'echo $PATH'
+                sh 'which node || echo "node not found"'
+                sh 'which npm || echo "npm not found"'
+                sh 'which pnpm || echo "pnpm not found"'
+            }
+        }
         
         stage('Clone repo') {
             steps {
