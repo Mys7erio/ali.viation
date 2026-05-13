@@ -41,7 +41,7 @@ pipeline {
         stage('Install Dependencies and Build Project') {
             steps {
                 withCredentials([string(credentialsId: 'VITE_GRAFANA_FARO_API_KEY', variable: 'API_KEY')]) {
-                    sh 'pnpm install'
+                    sh 'pnpm install --config.only-built-dependencies=esbuild,protobufjs'
                     sh 'VITE_GRAFANA_FARO_API_KEY=$API_KEY pnpm run build'
                 }
             }
