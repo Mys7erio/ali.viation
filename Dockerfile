@@ -8,7 +8,7 @@ COPY ./package.json /webroot/package.json
 # Install pnpm via corepack, and then install node dependencies
 RUN corepack enable && \
     corepack install -g pnpm && \
-    pnpm install
+    pnpm install --config.only-built-dependencies=esbuild,protobufjs
 
 COPY ./src /webroot/src
 COPY ./index.html /webroot/index.html
