@@ -41,7 +41,9 @@ pipeline {
         stage('Install Dependencies and Build Project') {
             steps {
                 withCredentials([string(credentialsId: 'VITE_GRAFANA_FARO_API_KEY', variable: 'API_KEY')]) {
-                    sh 'pnpm install --config.only-built-dependencies=esbuild,protobufjs'
+                    sh 'pnpm install --frozen-lockfile --ignore-scripts'
+                    sh 'pnpm approve-builds esbuild protobufjs'
+                    sh 'pnpm install --frozen-lockfile'
                     sh 'VITE_GRAFANA_FARO_API_KEY=$API_KEY pnpm run build'
                 }
             }

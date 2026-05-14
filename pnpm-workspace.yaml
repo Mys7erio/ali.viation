@@ -1,0 +1,8 @@
+onlyBuiltDependencies:
+  - esbuild
+  - protobufjs
+
+
+# The security gate
+minimumReleaseAge: 20160
+
