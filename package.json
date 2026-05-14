@@ -11,23 +11,17 @@
   "dependencies": {
     "@grafana/faro-react": "^1.19.0",
     "@grafana/faro-web-tracing": "^1.19.0",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-router-dom": "^6.30.3",
-    "serve": "^14.2.6",
+    "serve": "^14.2.5",
     "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@grafana/faro-rollup-plugin": "^0.5.2",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
-    "vite": "^6.4.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "protobufjs"
-    ]
+    "vite": "^6.4.1"
   }
 }
