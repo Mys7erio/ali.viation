@@ -3,12 +3,15 @@ FROM node:lts-slim AS build
 WORKDIR /webroot
 
 COPY ./package.json /webroot/package.json
-# COPY ./package-lock.json /webroot/package-lock.json
+COPY ./pnpm-lock.yaml /webroot/pnpm-lock.yaml
+COPY ./pnpm-workspace.yaml /webroot/pnpm-workspace.yaml
 
-# Install pnpm via corepack, and then install node dependencies
-RUN corepack enable && \
-    corepack install -g pnpm && \
-    pnpm install --config.only-built-dependencies=esbuild,protobufjs
+# Install pnpm and node dependencies
+RUN npm install -g pnpm && \
+    pnpm install --frozen-lockfile --ignore-scripts && \
+    pnpm approve-builds esbuild protobufjs && \
+    # Final install for verification
+    pnpm install --frozen-lockfile
 
 COPY ./src /webroot/src
 COPY ./index.html /webroot/index.html
